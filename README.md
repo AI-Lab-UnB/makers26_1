@@ -19,6 +19,7 @@ Aqui deverão ser registradas as atividades, evoluções, entregas parciais e co
 Todos os participantes devem seguir obrigatoriamente as regras abaixo:
 
 - **Branch individual por aluno**
+- **A branch deve ser nomeada da seguinte forma: [nome]_[matricula]**
 - **Mínimo de 3 commits semanais por aluno**
 - **Pull Request obrigatório**
 - **Code review obrigatório**
