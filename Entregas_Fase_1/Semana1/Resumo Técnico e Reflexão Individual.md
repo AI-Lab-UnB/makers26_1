@@ -68,5 +68,5 @@
 ## Arquivo `.gitignore`
   - Um arquivo que lista pastas e arquivos que não se deseja que sejam enviados ao git como o arquivo `.env`.
 
-# Reflaxão individual: "O que é desenvolvimento profissional"
+# Reflexão individual: "O que é desenvolvimento profissional"
 Desenvolviemnto profissional é o processo contínuo de aprendizado e aprimoramento de habilidades à carreira Profissional. Se trata de se manter relevante na sua área de atuação, não apenas por meio de conhecimento técnico, mas também sabendo como trabalhar em uma equipe, a fim de não se estagnar em sua carreira profissional.
