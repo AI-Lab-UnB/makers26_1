@@ -47,3 +47,12 @@ Esse ciclo se repete a cada nova alteração, mantendo o histórico do projeto s
 ## Por que usar?
 
 Além de evitar a perda de código, o Git permite que várias pessoas trabalhem no mesmo projeto ao mesmo tempo, cada uma em sua própria branch, sem interferir no trabalho umas das outras. Isso torna o desenvolvimento mais organizado, seguro e rastreável.
+---
+
+## O que é desenvolvimento profissional?
+
+Desenvolvimento profissional vai além de aprender novas ferramentas ou acumular conhecimento técnico. Como seres essencialmente sociais, nosso crescimento profissional está diretamente ligado à forma como nos relacionamos com as pessoas ao redor — colegas, equipes e a sociedade como um todo.
+
+Mais do que dominar habilidades isoladas, é na troca com o outro que nos tornamos melhores profissionais. A comunicação, a escuta e a capacidade de colaborar são tão importantes quanto qualquer competência técnica. Afinal, nenhum projeto relevante é construído sozinho.
+
+Por isso, desenvolver-se profissionalmente significa também desenvolver-se como pessoa — crescendo junto com quem está ao seu lado.
