@@ -39,7 +39,7 @@ git config --global user.email "seuemail@email.com"
 
 ---
 
-## **Principais Comandos**
+## **Principais Comandos do Git**
 No terminal, esses são os comandos básicos do Git:
 | **Comando** | **Descrição** |
 | --- | --- |
@@ -68,7 +68,7 @@ main
  └── docs/resumo-tecnico
  ```
 
- ### **Comandos da Branch**
+ ### **Comandos Git para Branch**
 | **Comando** | **Descrição** |
 | --- | --- |
 | `git branch` | Lista todas as branches existentes. |
