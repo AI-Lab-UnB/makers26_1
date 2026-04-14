@@ -39,39 +39,23 @@ git config --global user.email "seuemail@email.com"
 
 ## **Principais Comandos**
 No terminal, esses são os comandos básicos do Git:
+| **Comando** | **Descrição** |
+| --- | --- |
+| `git init` | Inicializa um novo repositório Git na pasta atual. |
+| `git clone <url-do-repositorio>` | Faz uma cópia de um repositório remoto para a máquina local. |
+| `git status` | Mostra os arquivos modificados, adicionados ou não rastreados. |
+| `git add .` | Adiciona todos os arquivos alterados para a área de staging. |
+| `git commit -m "mensagem"` | Salva as alterações realizadas em um commit. |
+| `git pull` | Atualiza o repositório local com a versão mais recente do repositório remoto. |
+| `git push` | Envia os commits locais para o repositório remoto. |
+| `git log` | Exibe o histórico de commits realizados no projeto. |
+| `git rm arquivo.txt` | Remove um arquivo do repositório. |
+
+## **Merge e Pull Request**
+
+Depois de finalizar as alterações em uma branch, elas podem ser unidas à branch principal por meio de merge.
 ```bash
-git init
+git merge nome-da-branch
 ```
-*Inicializa um novo repositório Git na pasta atual.*
-```bash
-git clone <url-do-repositorio>
-```
-*Faz uma cópia de um repositório remoto para a máquina local.*
-```bash
-git status
-```
-*Mostra os arquivos modificados, adicionados ou não rastreados.*
-```bash
-git add .
-```
-*Adiciona todos os arquivos alterados para a área de staging.*
-```bash
-git commit -m "mensagem"
-```
-*Salva as alterações realizadas em um commit.*
-```bash
-git pull
-```
-*Atualiza o repositório local com a versão mais recente do repositório remoto.*
-```bash
-git push
-```
-*Envia os commits locais para o repositório remoto.*
-```bash
-git log
-```
-*Exibe o histórico de commits realizados no projeto.*
-```bash
-git rm arquivo.txt
-```
-*Remove um arquivo do repositório.*
+
+No GitHub, essa integração normalmente é feita por um Pull Request (PR). O PR permite que outras pessoas revisem as alterações antes de aprová-las. Isso ajuda a evitar erros e melhora a organização do projeto.
