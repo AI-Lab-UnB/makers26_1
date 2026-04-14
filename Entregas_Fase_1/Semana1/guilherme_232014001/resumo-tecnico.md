@@ -1,4 +1,5 @@
 # **Resumo Técnico - Git & GitHub**
+
 ## **Introdução**
 
 ### **O que é Git**
@@ -29,14 +30,15 @@ Em resumo, GitHub é apenas uma plataforma web que hospeda seus repositórios Gi
 ---
 
 ## **Configuração Inicial**
-
 Antes de utilizar o Git, é necessário baixá-lo e configurar o nome e o e-mail que aparecerão nos commits:
 
 ```bash
 git config --global user.name "Seu Nome"
 git config --global user.email "seuemail@email.com"
 ```
+
 ---
+
 ## **Principais Comandos**
 No terminal, esses são os comandos básicos do Git:
 | **Comando** | **Descrição** |
@@ -50,9 +52,40 @@ No terminal, esses são os comandos básicos do Git:
 | `git push` | Envia os commits locais para o repositório remoto. |
 | `git log` | Exibe o histórico de commits realizados no projeto. |
 | `git rm arquivo.txt` | Remove um arquivo do repositório. |
----
-## **Merge e Pull Request**
 
+---
+
+## **Branching**
+Uma **branch** é uma ramificação independente do projeto. Ela permite desenvolver funcionalidades ou corrigir problemas sem alterar diretamente a branch principal (main).
+
+Dessa forma, vários desenvolvedores podem trabalhar ao mesmo tempo em diferentes partes do projeto sem causar conflitos imediatamente.
+
+Exemplo de fluxo:
+```text
+main
+ ├── feat/tela-login
+ ├── fix/erro-cadastro
+ └── docs/resumo-tecnico
+ ```
+
+ ### **Comandos da Branch**
+| **Comando** | **Descrição** |
+| --- | --- |
+| `git branch` | Lista todas as branches existentes. |
+| `git branch nome-da-branch` | Cria uma nova branch. |
+| `git switch nome-da-branch` | Troca para outra branch. |
+| `git switch -c nome-da-branch` | Cria uma branch e já troca para ela. |
+| `git branch -d nome-da-branch` | Remove uma branch que não será mais utilizada. |
+
+ Exemplo:
+ ```bash
+ git switch -c feat/tela-login
+ ```
+ Esse comando cria uma branch chamada *feat/tela-login* e já troca para ela.
+
+---
+
+## **Merge e Pull Request**
 Depois de finalizar as alterações em uma branch, por meio do Git, elas podem ser unidas à outra branch por meio de merge.
 
 ```bash
@@ -61,8 +94,11 @@ git merge nome-da-branch
 
 No GitHub, essa integração normalmente é feita por um **Pull Request (PR)**. O PR permite que o desenvolvedor explique a funcionalidade que foi desenvolvida, alterada ou removida e promove a boa prática de outras pessoas revisem as alterações antes de aprová-las. Isso ajuda a evitar erros e melhora a organização do projeto.
 
+---
+
 ## **Segurança**
-###
+
+### **Chave SSH**
 Uma forma mais segura de conectar o GitHub ao computador é utilizando **chaves SSH**. Com elas, não é necessário digitar usuário e senha toda vez que for enviar ou baixar alterações do repositório.
 
 Comando para gerar uma chave SSH:
@@ -71,12 +107,15 @@ ssh-keygen -t ed25519 -C "seuemail@email.com"
 ```
 Depois disso, basta adicionar a chave pública gerada à conta do GitHub.
 
+### **.gitignore**
 O arquivo `.gitignore` é utilizado para impedir que determinados arquivos ou pastas sejam enviados ao repositório. Isso é importante para evitar o envio de arquivos temporários, dependências e informações sensíveis.
 
 Exemplo:
-
 ```text
 node_modules/
 .env
 dist/
 .vscode/
+```
+
+O arquivo .env, por exemplo, geralmente contém senhas, chaves de API e outras informações privadas, portanto não deve ser enviado ao GitHub.
