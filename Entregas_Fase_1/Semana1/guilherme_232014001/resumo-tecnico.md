@@ -36,7 +36,7 @@ Antes de utilizar o Git, é necessário baixá-lo e configurar o nome e o e-mail
 git config --global user.name "Seu Nome"
 git config --global user.email "seuemail@email.com"
 ```
-
+---
 ## **Principais Comandos**
 No terminal, esses são os comandos básicos do Git:
 | **Comando** | **Descrição** |
@@ -50,12 +50,33 @@ No terminal, esses são os comandos básicos do Git:
 | `git push` | Envia os commits locais para o repositório remoto. |
 | `git log` | Exibe o histórico de commits realizados no projeto. |
 | `git rm arquivo.txt` | Remove um arquivo do repositório. |
-
+---
 ## **Merge e Pull Request**
 
-Depois de finalizar as alterações em uma branch, elas podem ser unidas à branch principal por meio de merge.
+Depois de finalizar as alterações em uma branch, por meio do Git, elas podem ser unidas à outra branch por meio de merge.
+
 ```bash
 git merge nome-da-branch
 ```
 
-No GitHub, essa integração normalmente é feita por um Pull Request (PR). O PR permite que outras pessoas revisem as alterações antes de aprová-las. Isso ajuda a evitar erros e melhora a organização do projeto.
+No GitHub, essa integração normalmente é feita por um **Pull Request (PR)**. O PR permite que o desenvolvedor explique a funcionalidade que foi desenvolvida, alterada ou removida e promove a boa prática de outras pessoas revisem as alterações antes de aprová-las. Isso ajuda a evitar erros e melhora a organização do projeto.
+
+## **Segurança**
+###
+Uma forma mais segura de conectar o GitHub ao computador é utilizando **chaves SSH**. Com elas, não é necessário digitar usuário e senha toda vez que for enviar ou baixar alterações do repositório.
+
+Comando para gerar uma chave SSH:
+```bash
+ssh-keygen -t ed25519 -C "seuemail@email.com"
+```
+Depois disso, basta adicionar a chave pública gerada à conta do GitHub.
+
+O arquivo `.gitignore` é utilizado para impedir que determinados arquivos ou pastas sejam enviados ao repositório. Isso é importante para evitar o envio de arquivos temporários, dependências e informações sensíveis.
+
+Exemplo:
+
+```text
+node_modules/
+.env
+dist/
+.vscode/
