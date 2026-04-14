@@ -1,5 +1,7 @@
 # Resumo Técnico - Git
 
+---
+
 O Git é uma ferramenta de versionamento de código utilizada para armazenar versões antigas de códigos atuais.
 
 Ele pode ser utilizado também para trabalho em grupo sem que o código principal seja afetado.
