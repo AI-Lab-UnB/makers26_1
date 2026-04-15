@@ -1,4 +1,4 @@
-Reflexão: Desenvolvimento Profissional 
+#Reflexão: Desenvolvimento Profissional 
 
 Na minha opinião, desenvolvimento profissional é sobre estar sempre buscando melhorias, seja no currículo ou se familiarizando com novas tecnologias. O mundo não é estático — ele está em constante e rápida mudança. Como dizia Zygmunt Bauman, vivemos em uma modernidade líquida, onde tudo é fluido e extremamente veloz. E no mercado de trabalho isso é muito real: se você não se adapta e não continua buscando aprender, acaba ficando pra trás. 
 
