@@ -9,7 +9,7 @@ monthly_salary = yearly_salary / 12
 months = 0
 down = cost_of_dream_home * portion_down_payment
 
-while (down > amount_saved):
+while down > amount_saved:
     monthly_return = amount_saved * (r/12)
     montly_save = monthly_salary * portion_saved
     amount_saved += monthly_return + montly_save
