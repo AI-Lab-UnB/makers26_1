@@ -1,7 +1,8 @@
 import math
 
 n = int(input())
-sqrt = int(math.sqrt(n))
+int_sqrt = int(math.sqrt(n))
+sqrt = 
 
 if isinstance(sqrt, int):
     print(sqrt)
