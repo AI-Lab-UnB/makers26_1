@@ -27,10 +27,10 @@ Plataforma baseada em web que é usada para controle de versão e colaboração.
 Uso do sitema *GitHub Issues* para rastrear erros, tarefas, ideias e feedback
 
 - feature requests
-Comentário, mensagem ou pedir para um usuário implementar uma funcionalidade específica para o seu produto.
+Trata-se do conceito de propor novas funcionalidades ou melhorias para um produto, sendo essas solicitações geralmente realizadas por usuários, clientes ou pela própria equipe.
 
 - task management
-Função do git que serve para organizar, rastrear progresso e manter registro do seus trabalhos.
+É o uso de ferramentas do GitHub, como Issues e Projects, para organizar tarefas, acompanhar progresso e manter registro do seus trabalhos.
 
 - wikis
 É uma funcionalidade já do github que permite os usuários hospedarem e gerenciarem as documentações para os seus repositórios.
@@ -65,7 +65,7 @@ https://kodekloud.com/blog/how-git-works/
 - Working directory
 
 O diretório onde os projetos estão.
-As modificações são feitas nos arquivos são consideradas *untracked* até colocá-las na área de *stage*.
+Os arquivos novos são consideradas *untracked* até colocá-las na área de *stage*.
     
 - Staging area
 Arquivos aqui estão para serem incluídos no proximo *commit*.
@@ -80,7 +80,7 @@ Remote
 - remote repo
 São hubs centralizados que os membros podem pegar e colocar mudanças de forma sincronizada e colaborativa.
 
-![Git Workflow](images.png)
+![Git Workflow](git_workflow.png)
 
 ### Vídeo para auxiliar a entender:
 https://www.youtube.com/watch?v=e9lnsKot_SQ
