@@ -1,10 +1,10 @@
-import math
+N = int(input("Digite um número: "))
+i = 1
 
-n = int(input())
-int_sqrt = int(math.sqrt(n))
-sqrt = 
+while i**3 < N:
+    i += 1
 
-if isinstance(sqrt, int):
-    print(sqrt)
+if i**3 == N:
+    print(i)
 else:
-    print("error")
+    print('error')
