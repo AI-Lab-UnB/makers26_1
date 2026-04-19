@@ -1,4 +1,4 @@
-initial_deposit = float(input())
+initial_deposit = float(input("Enter your yearly salary: "))
 cost_dreamhouse = 800000*0.25
 r = 1.0
 months = 36
