@@ -122,7 +122,7 @@ def get_idf(file_paths):
             doc_counts[word] = doc_counts.get(word, 0) + 1
         
     idf_dict = {}
-    for word, count in doc_counts.keys():
+    for word, count in doc_counts.items():
         idf_dict[word] = math.log10(total_doc / count)
 
     return idf_dict
