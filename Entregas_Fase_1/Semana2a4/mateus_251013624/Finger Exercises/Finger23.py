@@ -4,5 +4,5 @@
 #Questão 2
 #Solução: θ(n*n)
 
-#Questão 3
+#Questão
 #Solução: θ(log n)
