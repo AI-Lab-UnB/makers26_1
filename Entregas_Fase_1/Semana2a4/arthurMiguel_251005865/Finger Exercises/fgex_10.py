@@ -24,7 +24,6 @@ def lf3(x):
 
 
 def all_true(n):
-    n = int(input("Verifique se é um número"))
     lf(n)
 
 n = int(input("Verifique se é um número"))
