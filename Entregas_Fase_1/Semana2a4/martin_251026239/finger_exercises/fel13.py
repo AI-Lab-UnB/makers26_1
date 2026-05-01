@@ -27,9 +27,6 @@ def sum_str_lengths(L):
     
     return sum
             
-
-
-
 # Examples:
 print(sum_str_lengths(["abcd", ["e", "fg"]]))  # prints 7
 print(sum_str_lengths([12, ["e", "fg"]]))      # raises ValueError
