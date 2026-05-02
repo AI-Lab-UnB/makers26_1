@@ -8,3 +8,7 @@ Mais complicado que o primeiro, porém mais divertido também. Tive que pesquisa
 
 ## Problem Set 3
 O processo é interessante, pois eu vou criando o código e quando tenho dúvida em algo ou não sei o conteúdo, eu revejo a aula referente à minha dificuldade. O exemplo desse problem set foi o dicionário: uma ferramenta muito poderosa e com vários métodos. Foi difícil.
+
+## Problem Set 4
+Esse problema promete ser difícil por cobrar muitas coisas que eu não sei, estou fazendo Orientação a Objetos agora então não tenho dominância desse paradigma. Estrutura de Dados eu não cheguei em árvore e talvez nem chegue esse semestre. Mas sigo forte e sempre pesquisando.
+
