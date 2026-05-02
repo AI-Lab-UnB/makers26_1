@@ -341,3 +341,148 @@ class Circle():
         return str(self.radius)
 '''
 #finger 19
+'''
+class Container(object):
+    """
+    A container object is a list and can store elements of any type
+    """
+    def __init__(self):
+        """
+        Initializes an empty list
+        """
+        self.myList = []
+
+    def size(self):
+        """
+        Returns the length of the container list
+        """
+        return len(self.myList)
+
+    def add(self, elem):
+        """
+        Adds the elem to one end of the container list, keeping the end
+        you add to consistent. Does not return anything
+        """
+        self.myList.append(elem)
+
+class Stack(Container):
+    """
+    A subclass of Container. Has an additional method to remove elements.
+    """
+    def remove(self):
+        """
+        The newest element in the container list is removed
+        Returns the element removed or None if the queue contains no elements
+        """
+        if self.size() > 0:
+            return self.myList.pop()
+        else:
+            return None
+'''    
+#finger 20
+'''
+class Container(object):
+    """
+    A container object is a list and can store elements of any type
+    """
+    def __init__(self):
+        """
+        Initializes an empty list
+        """
+        self.myList = []
+
+    def size(self):
+        """
+        Returns the length of the container list
+        """
+        return len(self.myList)
+
+    def add(self, elem):
+        """
+        Adds the elem to one end of the container list, keeping the end
+        you add to consistent. Does not return anything
+        """
+        self.myList.append(elem)
+
+class Queue(Container):
+    """
+    A subclass of Container. Has an additional method to remove elements.
+    """
+    def remove(self):
+        """
+        The oldest element in the container list is removed
+        Returns the element removed or None if the stack contains no elements
+        """
+        if self.size() > 0:
+            return self.myList.pop(0)
+        else:
+            return None
+'''
+#finger 22
+## são questões
+'''
+""" question 1 """
+Question 1: Simplify n*n + log(n) + 2**a to determine θ in terms of n.
+- n*n = n**2 
+- a is constant so 2**a = c
+- n**2 + log(n) + c
+- o polinomial n**2 custa mais que log(n) e algo constante logo theta(n**2)
+
+""" question 2 """
+Question 2: Simplify 2**n + n*log(n) + n**2 to determine θ in terms of n.
+- 2**n is exponential is dominant so theta(2**n) is the answer
+
+
+""" question 3 """
+Question 3: Simplify f*log(f) + 100000 + 300*a + x*y*z to determine θ in terms of n.
+-  theta(1) porque não tem n na função logo o tempo da função não cresce com n
+'''
+#finger 23
+'''
+#Question 1: Choose the worst-case asymptotic order of growth (upper and lower bound) for the following function. Assume n = a.
+def running_product(a):
+    count = 0
+    """ a is an int """
+    product = 1
+    for i in range(5,a+5):
+        count += 1
+        product *= i
+        if product == a:
+            return True, count
+    return False, count
+#upper bound  = O(n) e lower bound = O(n)
+print(running_product(0),
+running_product(11),
+running_product(10000))
+#Question 2: Choose the worst-case asymptotic order of growth (upper and lower bound) for the following function. Assume n = len(L).
+
+def tricky_f(L, L2):
+    count = 0
+    """ L and L2 are lists of equal length """
+    inL = False
+    for e1 in L:
+        count += 1
+        if e1 in L2:
+            inL = True
+    inL2 = False
+    for e2 in L2:
+        count +=1
+        if e2 in L:
+            inL2 = True
+    return inL and inL2, count
+# upper bound = 2(n*n) = O(n**2)(because in method goes from 0 to n - 1 com n sendo o len(dalista) e o loop passa por todos os elemento 1 vez logo n*n e o dois é pq isso se repete 2 ezes) (n being the lenght of the list), lower bound = n**2
+#Question 3: Choose the worst-case asymptotic order of growth (upper and lower bound) for the following function.
+print(tricky_f([],[]))
+
+def sum_f(n):
+    count = 0
+    """ n > 0 """
+    answer = 0
+    while n > 0:
+        answer += n%10
+        n = int(n/10)
+        count +=1 
+    return answer, count
+# upperbound = log(n), O(log(n)) = lower bound
+print(sum_f(1000), sum_f(10))
+'''
