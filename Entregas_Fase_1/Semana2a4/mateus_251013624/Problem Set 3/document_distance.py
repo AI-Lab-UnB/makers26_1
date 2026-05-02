@@ -38,7 +38,7 @@ def text_to_list(input_text):
     Returns:
         list representation of input_text, where each word is a different element in the list
     """
-    pass
+    return input_text.split()
 
 
 ### Problem 1: Get Frequency ###
@@ -53,7 +53,11 @@ def get_frequencies(input_iterable):
     Note: 
         You can assume that the only kinds of white space in the text documents we provide will be new lines or space(s) between words (i.e. there are no tabs)
     """
-    pass
+    unica = set(input_iterable)
+    dicionario = {}
+    for word in unica:
+        dicionario[word] = input_iterable.count(word)
+    return dicionario
 
 
 ### Problem 2: Letter Frequencies ###
@@ -66,7 +70,9 @@ def get_letter_frequencies(word):
         is a letter in word and the corresponding int
         is the frequency of the letter in word
     """
-    pass
+    lista = list(word)
+    return get_frequencies(lista)
+
 
 
 ### Problem 3: Similarity ###
