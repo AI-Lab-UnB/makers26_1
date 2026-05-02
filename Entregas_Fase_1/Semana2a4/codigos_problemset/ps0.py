@@ -1,7 +1,7 @@
 # Problem Set 0
 # Name: Matheus Eiki
 # Collaborators: None
-# Time Spent: 0:15
+# Time Spent: 0:5
 
 import numpy
 
