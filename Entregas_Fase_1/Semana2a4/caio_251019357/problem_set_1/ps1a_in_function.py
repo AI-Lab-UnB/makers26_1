@@ -1,4 +1,5 @@
 def part_a(yearly_salary, portion_saved, cost_of_dream_home):
+    
     down_payment = cost_of_dream_home * 0.25
     current_savings = 0.0
     monthly_deposit = yearly_salary / 12 * portion_saved

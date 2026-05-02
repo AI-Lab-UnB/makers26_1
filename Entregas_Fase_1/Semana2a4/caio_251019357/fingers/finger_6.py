@@ -1,18 +1,26 @@
-n = 108
-
-low = 0.0
 high = 1000
-steps = 0
+low = 0
 
-while True:
-    rate = (low + high) / 2
+calculate = (low + high) / 2
 
-    if abs(savings - down_payment) <= 100:
-        return rate, steps + 1
+count = 1
 
-    if savings < down_payment:
-        low = rate
-    else:
-        high = rate
+N = 230
 
-    steps += 1
+while calculate != N :
+
+    if calculate < N or abs(low - calculate) == abs(high - calculate):
+
+        low = calculate 
+
+    elif calculate > N :
+
+        high = calculate
+
+    else :
+
+        print(f"{count} iterations")
+        print(f"N = {N}")
+
+    count += 1
+

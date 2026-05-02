@@ -192,7 +192,7 @@ def get_tf(file_path):
 
 
 
-
+    
 def get_idf(file_paths):
 
     total_paths = len(file_paths)
@@ -221,7 +221,7 @@ def get_idf(file_paths):
 
 
     dict_idf = {}
-
+    
     for key in dict_frequencies:
 
         idf = math.log10(total_paths/dict_frequencies[key])
