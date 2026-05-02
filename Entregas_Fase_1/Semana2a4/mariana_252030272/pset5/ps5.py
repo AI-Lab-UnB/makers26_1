@@ -69,7 +69,9 @@ def img_to_pix(filename):
                  in form (R,G,B) such as [(0,0,0),(255,255,255),(38,29,58)...] for RGB image
                  in form L such as [60,66,72...] for BW image
     """
-    pass
+    img = Image.open(filename)
+    return(list(img.get_flattened_data()))
+
 
 
 def pix_to_img(pixels_list, size, mode):
@@ -88,7 +90,9 @@ def pix_to_img(pixels_list, size, mode):
     returns:
         img: Image object made from list of pixels
     """
-    pass
+    img = Image.new(mode, size)
+    img.putdata(pixels_list)
+    return img
 
 
 def filter(pixels_list, color):
@@ -100,7 +104,13 @@ def filter(pixels_list, color):
     returns: list of pixels in same format as earlier functions,
     transformed by matrix multiplication
     """
-    pass
+    result = []
+    matrix_color =  make_matrix(color)
+    for pixel in pixels_list:
+        new_pixel = matrix_multiply(pixel, matrix_color)
+        result.append(tuple(int(x) for x in new_pixel))
+    return result
+    
 
 
 def extract_end_bits(num_end_bits, pixel):
@@ -133,18 +143,20 @@ def extract_end_bits(num_end_bits, pixel):
     Returns:
         The num_end_bits of pixel, as an integer (BW) or tuple of integers (RGB).
     """
-    pass
+    if type(pixel) is tuple:        
+        binary = []
+        for i in range(3):
+            binary.append(pixel[i]%2**num_end_bits)
+        # quando for colocar o tuple passe uma lista
+        
+        return tuple(binary)
+    else:
+        resultado = pixel%2**num_end_bits
+        return resultado
 
 
-def reveal_bw_image(filename):
-    """
-    Extracts the single LSB for each pixel in the BW input image. 
-    Inputs:
-        filename: string, input BW file to be processed
-    Returns:
-        result: an Image object containing the hidden image
-    """
-    pass
+
+
 
 
 def reveal_color_image(filename):
@@ -154,8 +166,29 @@ def reveal_color_image(filename):
         filename: string, input RGB file to be processed
     Returns:
         result: an Image object containing the hidden image
+
+    My things:
+        mode: 'RGB' or 'L' to indicate an RGB image or a 
+          BW image, respectively
     """
-    pass
+    size = Image.open(filename).size
+    pixels = img_to_pix(filename)[:]
+    
+    for i in range(len(pixels)):
+        extracted = extract_end_bits(3, pixels[i])
+        pixels[i] = tuple(int(x * 255/7) for x in extracted)
+    print(type(extracted), extracted)
+    return pix_to_img(pixels,size,"RGB")
+
+def reveal_bw_image(filename):
+    size = Image.open(filename).size
+    pixels = img_to_pix(filename)[:]
+    for i in range(len(pixels)):
+        extracted = extract_end_bits(1, pixels[i])
+        pixels[i] = int(extracted * 255)
+    print(type(extracted), extracted)
+    return pix_to_img(pixels,size,"L")
+    
 
 
 def reveal_image(filename):
@@ -198,28 +231,27 @@ def draw_kerb(filename, kerb):
 
 
 def main():
-    pass
 
     # Uncomment the following lines to test part 1
 
-    #im = Image.open('image_15.png')
-    #width, height = im.size
-    #pixels = img_to_pix('image_15.png')
+    # im = Image.open('image_15.png')
+    # width, height = im.size
+    # pixels = img_to_pix('image_15.png')
 
-    #non_filtered_pixels = filter(pixels,'none')
-    #im = pix_to_img(non_filtered_pixels, (width, height), 'RGB')
+    # non_filtered_pixels = filter(pixels,'none')
+    # im = pix_to_img(non_filtered_pixels, (width, height), 'RGB')
     # im.show()
 
-    #red_filtered_pixels = filter(pixels,'red')
-    #im2 = pix_to_img(red_filtered_pixels,(width,height), 'RGB')
+    # red_filtered_pixels = filter(pixels,'red')
+    # im2 = pix_to_img(red_filtered_pixels,(width,height), 'RGB')
     # im2.show()
 
-    # Uncomment the following lines to test part 2
-    #im = reveal_image('hidden1.bmp')
-    # im.show()
+    #Uncomment the following lines to test part 2
+    im = reveal_image('hidden1.bmp')
+    im.show()
 
-    #im2 = reveal_image('hidden2.bmp')
-    # im2.show()
+    im2 = reveal_image('hidden2.bmp')
+    im2.show()
     
 
 if __name__ == '__main__':
