@@ -1,0 +1,7 @@
+# Reflexão sobre “ O que é desenvolvimento profissional ? “
+
+---
+
+Ao longo de toda minha vida acadêmica e profissional passei por diversas etapas, como o ensino médio, a escolha do curso, o vestibular, o desafiador início da universidade, projetos extracurriculares, e entre cada uma dessas fases foi necessário que eu obtivesse um crescimento em múltiplas áreas. Neste contexto, é evidente que para desenvolver você precisa evoluir suas habilidades socias, seu conhecimento, sua visão de mundo e muitos outros aspectos que vão te gerar maturidade e proporcionar que seja possível um transição da etapa em que você está, para a que deseja chegar.
+
+Portanto, acredito que o desenvolvimento profissional seja esta passagem de um estágio que você está para outro que seja mais perto do que almeja chegar, como uma meta de carreira, é como se estivesse “subindo um degrau”. Neste sentido, não limito essa mudança a apenas uma promoção de cargo, por exemplo, mas sim a qualquer evolução que você tenha feito e que mais pra frente, agora sim, te ajude a conseguir uma iniciação científica ou emprego novo, por exemplo. Desse modo, reflito que, um bom networking que faço, uma matéria que me dedico na faculdade, um projeto extracurricular que participo, o estudo de uma nova língua ou até uma palestra sobre saúde emocional e trabalho em equipe que vejo, tudo isso seja parte do meu desenvolvimento profissional.
