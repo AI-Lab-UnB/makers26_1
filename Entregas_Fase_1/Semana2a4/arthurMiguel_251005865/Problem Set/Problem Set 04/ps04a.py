@@ -1,3 +1,5 @@
+from tree import Node
+
 def init_trees():
     tree1 = Node(8, Node(2, Node(1), Node(6)), Node(10))
     tree2 = Node(7, Node(2, Node(1), Node(5, Node(3), Node(6))), Node(9, Node(8), Node(10)))
