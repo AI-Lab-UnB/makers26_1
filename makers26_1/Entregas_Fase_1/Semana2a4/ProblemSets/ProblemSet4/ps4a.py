@@ -12,29 +12,36 @@ tree2 = None #TODO
 tree3 = None #TODO
 
 def find_tree_height(tree):
-    '''
-    Find the height of the given tree
-    Input:
-        tree: An element of type Node constructing a tree
-    Output:
-        The integer depth of the tree
-    '''
-    # TODO: Remove pass and write your code here
-    pass
+    if tree is None:
+        return -1
+    
+    if tree.get_left_child() is None and tree.get_right_child() is None:
+        return 0
+    
+    leftValue = find_tree_height(tree.get_left_child())
+    rightValue= find_tree_height(tree.get_right_child())
+
+    return 1 + max(leftValue,rightValue)
+
 
 def is_heap(tree, compare_func):
-    '''
-    Determines if the tree is a max or min heap depending on compare_func
-    Inputs:
-        tree: An element of type Node constructing a tree
-        compare_func: a function that compares the child node value to the parent node value
-            i.e. op(child_value,parent_value) for a max heap would return True if child_value < parent_value and False otherwise
-                 op(child_value,parent_value) for a min meap would return True if child_value > parent_value and False otherwise
-    Output:
-        True if the entire tree satisfies the compare_func function; False otherwise
-    '''
-    # TODO: Remove pass and write your code here
-    pass
+    
+    if tree is None:
+        return True
+    
+    parent_val = tree.get_value()
+    left_child = tree.get_left_child()
+    right_child = tree.get_right_child()
+
+    if left_child is not None:
+        if not compare_func(left_child.get_value(), parent_val):
+            return False
+       
+    if right_child is not None:
+        if not compare_func(right_child.get_value(), parent_val):
+            return False
+
+    return is_heap(left_child, compare_func) and is_heap(right_child, compare_func)
 
 
 
