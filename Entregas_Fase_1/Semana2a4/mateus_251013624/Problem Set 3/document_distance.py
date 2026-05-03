@@ -10,6 +10,9 @@
 
 import string
 import math
+from itertools import count
+from pydoc_data.topics import topics
+from typing import final
 
 
 ### DO NOT MODIFY THIS FUNCTION
@@ -100,7 +103,17 @@ def calculate_similarity_score(freq_dict1, freq_dict2):
          all frequencies in both dict1 and dict2.
         Return 1-(DIFF/ALL) rounded to 2 decimal places
     """
-    pass
+    l1 = set(freq_dict1.keys())
+    l2 = set(freq_dict2.keys())
+    u = list(l1| l2)
+    topo = 0
+    baixo = 0
+    for i in u:
+        topo +=abs(freq_dict1.get(i, 0) - freq_dict2.get(i, 0))
+        baixo += freq_dict1.get(i, 0) + freq_dict2.get(i, 0)
+    return round(1 -(topo/baixo), 2)
+
+
 
 
 ### Problem 4: Most Frequent Word(s) ###
@@ -124,7 +137,18 @@ def get_most_frequent_words(freq_dict1, freq_dict2):
     If multiple words are tied (i.e. share the same highest frequency),
     return an alphabetically ordered list of all these words.
     """
-    pass
+    l1 = set(freq_dict1.keys())
+    l2 = set(freq_dict2.keys())
+    u = list(l1 | l2)
+    dic = {}
+    for i in u:
+        dic[i] = freq_dict1.get(i, 0) + freq_dict2.get(i, 0)
+    maiorFreq = max(dic.values())
+    finalList = []
+    for word, freq in dic.items():
+        if freq == maiorFreq:
+            finalList.append(word)
+    return sorted(finalList)
 
 
 ### Problem 5: Finding TF-IDF ###
@@ -139,7 +163,15 @@ def get_tf(file_path):
         in the document) / (total number of words in the document)
     * Think about how we can use get_frequencies from earlier
     """
-    pass
+    palavras = text_to_list(load_file(file_path))
+    TotalPalavras = len(palavras)
+    dicPalavras = get_frequencies(palavras)
+    dicFinal = {}
+    for word, freq in dicPalavras.items():
+        dicFinal[word] = freq / TotalPalavras
+    return dicFinal
+
+
 
 def get_idf(file_paths):
     """
@@ -153,7 +185,18 @@ def get_idf(file_paths):
     with math.log10()
 
     """
-    pass
+    totalDoc = len(file_paths)
+    docs = {}
+    for file in file_paths:
+        unique_words = set(text_to_list(load_file(file)))
+        for word in unique_words:
+            docs[word] = docs.get(word, 0) + 1
+    dicFinal = {}
+    for word, freq in docs.items():
+        dicFinal[word] = math.log10(totalDoc / freq)
+    return dicFinal
+
+
 
 def get_tfidf(tf_file_path, idf_file_paths):
     """
@@ -168,7 +211,16 @@ def get_tfidf(tf_file_path, idf_file_paths):
 
         * TF-IDF(i) = TF(i) * IDF(i)
         """
-    pass
+    tfDic = get_tf(tf_file_path)
+    idfDic = get_idf(idf_file_paths)
+    finalList = []
+    for word, freq in tfDic.items():
+        idf = idfDic.get(word, 0)
+        tfIdf = freq * idf
+        finalList.append((word, tfIdf))
+    return sorted(finalList, key= lambda x: (x[1], x[0]))
+
+
 
 
 if __name__ == "__main__":
