@@ -1,0 +1,7 @@
+def same_chars(s1, s2):
+    return set(s1) == set(s2)
+ 
+print(same_chars("abc", "cab"))      # True
+print(same_chars("abccc", "caaab"))  # True
+print(same_chars("abcd", "cabaa"))   # False
+print(same_chars("abcabc", "cabz"))  # False
