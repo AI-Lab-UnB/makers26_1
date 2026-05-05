@@ -1,14 +1,19 @@
-x = 4
+ N = 742
 
-guess = int(input('Guess the number: '))
+low = 0
+high = 1000
+count = 0
 
-while x != guess:
-    if guess > x:
-        print('Too High')
-        guess = int(input('Guess the number: '))
-        
-    elif guess < x:
-        print('Too Low')
-        guess = int(input('Guess the number: '))
-        
-print('Correct')
+while True:
+    guess = (low + high) // 2
+    count += 1
+    
+    if guess == N:
+        break
+    elif guess < N:
+        low = guess + 1
+    else:
+        high = guess - 1
+
+print("count:", count)
+print("answer:", guess)
