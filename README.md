@@ -97,4 +97,47 @@ makers26_1/
 │   ├── Semana9/
 │   └── ...
 ```
-Cada semana tem a sua pasta e dentro dessa pasta vocês devem fazer a entrega de vocês. Caso seja um documento só, nomeie o documento com o seu nome ou matrícula. Caso a entrega tenha vários arquivos, crie uma pasta com seu nome dentro da pasta da semana. Quando começar a fase em grupos, o nome dos arquivos/pastas passa a ser o número do grupo.
+
+## Modelo de Pull Request
+
+### Contexto
+
+Exemplo:
+Este PR introduz a entrega da **Semana XX**, contendo os materiais desenvolvidos conforme as orientações da atividade proposta.
+
+Os arquivos foram organizados na pasta correspondente à semana e nomeados de acordo com o padrão definido no repositório, para facilitar a identificação e a revisão.
+
+### O que foi adicionado
+
+Exemplos:
+- Arquivo(s) referente(s) à atividade da semana
+- Documento(s), código(s), imagem(ns), relatório(s) ou outro(s) artefato(s) solicitado(s)
+- Estrutura organizada de acordo com o modelo de entrega individual ou em grupo
+- Conteúdo revisado antes do envio
+
+### Tipo de Mudança
+
+- [ ] Correção de Bug
+- [ ] Nova Funcionalidade
+- [ ] Documentação
+- [ ] Refatoração
+- [ ] Configuração
+- [ ] Entrega acadêmica
+
+### Checklist
+
+- [ ] Arquivo/pasta nomeado conforme o padrão do projeto
+- [ ] Entrega colocada na pasta correta da semana
+- [ ] Branch identificada com nome e matrícula
+- [ ] Conteúdo revisado
+- [ ] Nenhuma informação sensível exposta
+- [ ] Arquivos organizados corretamente
+- [ ] Markdown renderiza corretamente, quando aplicável
+
+### Notas para o Revisor
+
+Exemplos:
+- A entrega foi feita individualmente.
+- A entrega contém mais de um arquivo, por isso foi organizada em uma pasta própria.
+- O conteúdo segue exatamente o que foi solicitado na atividade.
+- Em caso de entrega em grupo, os arquivos foram organizados com a identificação do grupo.
