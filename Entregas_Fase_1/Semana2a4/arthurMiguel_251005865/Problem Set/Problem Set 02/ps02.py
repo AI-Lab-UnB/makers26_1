@@ -15,7 +15,7 @@ def guess_letter(secret_word):
         if i in secret_word:
             progresso += i
         else:
-            progresso += *
+            progresso += "*"
     return progresso
 
 def get_available_letters(letters_guessed):
