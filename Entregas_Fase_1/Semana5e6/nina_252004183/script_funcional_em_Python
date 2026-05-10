@@ -9,3 +9,19 @@ def carregar_dados():
         with open(ARQUIVO_DADOS, "r", encoding="utf-8") as arquivo:
             return json.load(arquivo)
     return []
+def salvar_dados(tarefas):
+    with open(ARQUIVO_DADOS, "w", encoding="utf-8") as arquivo:
+        json.dump(tarefas, arquivo, indent=4, ensure_ascii=False)
+
+
+def adicionar_tarefa(tarefas):
+    materia = input("Digite a matéria: ")
+    descricao = input("Digite a tarefa: ")
+    prazo = input("Digite o prazo: ")
+
+    tarefa = {
+        "materia": materia,
+        "descricao": descricao,
+        "prazo": prazo,
+        "concluida": False
+    }
