@@ -14,3 +14,4 @@ while achou is False:
         N -= N//2
 
 print('Passos',i)
+print('Resposta', N)
