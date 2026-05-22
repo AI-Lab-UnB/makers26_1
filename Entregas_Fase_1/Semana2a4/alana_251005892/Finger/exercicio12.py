@@ -3,6 +3,8 @@ contador = 0
 def count_sqerts (num_list):
     cont = 0
     for i in num_list:
+        if i <0:
+            continue
         sqrt = math.sqrt(i)
         if sqrt in num_list:
             cont +=1

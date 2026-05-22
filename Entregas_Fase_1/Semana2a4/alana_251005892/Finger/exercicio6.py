@@ -5,9 +5,9 @@ guess = (low + high)//2
 contador = 0
 while (guess != N):
     if(guess<N):
-        low += 1
+        low = guess + 1
     else:
-        high -=1
+        high =guess - 1
     guess = (low + high)//2
     contador = contador +1
 print(f'count: {contador}')

@@ -1,4 +1,4 @@
-def dot_product(tA, TB):
+def dot_product(tA, tB):
     soma = sum(a*b for a, b in zip(tA, tB))
     return (len(tA), soma)
 n= int(input("qual o tamanho desejado da tupla 1? "))

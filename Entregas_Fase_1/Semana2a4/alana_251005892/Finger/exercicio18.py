@@ -1,10 +1,10 @@
 class circle ():
-    def _init_(self, radius):
+    def __init__(self, radius):
         self.radius = radius
     def get_radius(self):
         return self.radius
-    def _add_(self, c):
+    def __add__(self, c):
         radius = self.radius + c.radius
         return circle(radius)
-    def _str_ (self):
+    def __str__ (self):
         return str(self.radius)

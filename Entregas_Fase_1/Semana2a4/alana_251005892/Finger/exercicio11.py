@@ -1,4 +1,6 @@
 def remove_and_sort(lin, k):
+    if k > len(lin):
+        return []
     for i in range(k):
         del lin[0]
     lin.sort()

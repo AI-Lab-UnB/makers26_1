@@ -3,7 +3,7 @@
 # Collaborators:
 
 import json
-import ps4b # Importing your work from Part B
+import exercicio4_B as ps4b # Importing your work from Part B
 
 ### HELPER CODE ###
 def load_words(file_name):
@@ -107,7 +107,7 @@ def decode_story():
     '''
     ciphertext = ps4b.EncryptedMessage(get_story_string())
     pads = get_story_pads()
-    return decrypt_message_try_pads(ciphertext, pads)
+    return decrypt_message_try_pads(ciphertext, pads).get_text()
 
 
 

@@ -8,11 +8,9 @@ amount_saved = 0.0
 r = 0.05
 while amount_saved < portion_down_payment :
     meses +=1
+    amount_saved+= amount_saved * (r/12)
+    amount_saved+= portion_saved * (yearly_salary/12)
     if meses %6 == 0:
         yearly_salary += yearly_salary * semi_annual_raise
-        amount_saved += portion_saved * (( yearly_salary)/12)
-        amount_saved += amount_saved * (r/12)
-    else:
-        amount_saved += amount_saved * (r/12)
-        amount_saved += (portion_saved * (yearly_salary/12))
+        
 print(meses)

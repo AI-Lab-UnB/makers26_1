@@ -1,10 +1,10 @@
 class circle():
-    def _init_ (self,radius):
+    def __init__ (self,radius):
         self.radius = radius
     def get_radius(self):
         return self.radius
     def set_radius(self, radius):
-        radius = self.radius
+        self.radius = radius
     def get_area(self):
         return 3.14 * self.radius ** 2
     def equal (self, c):

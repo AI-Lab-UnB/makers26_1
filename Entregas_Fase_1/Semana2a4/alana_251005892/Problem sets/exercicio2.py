@@ -45,7 +45,7 @@ def has_player_won(secret_word, letters_guessed):
     for letter in secret_word:
         if letter not in letters_guessed:
             return False
-        return
+        return True
     
 def get_word_progress(secret_word, letters_guessed):
     progress = ''
