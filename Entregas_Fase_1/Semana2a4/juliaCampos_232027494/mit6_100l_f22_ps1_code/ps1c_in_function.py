@@ -1,0 +1,28 @@
+def part_c(initial_deposit):
+	#########################################################################
+	high = 1.0
+	low = 0.0
+	margin= 100
+	nd_value = 200000
+	r = (high+low)/2
+	amount_saved = amount_cal(initial_deposit,r)
+	steps = 0
+	
+	##################################################################################################
+	## Determine the lowest rate of return needed to get the down payment for your dream home below ##
+	##################################################################################################
+	    
+	while abs(amount_saved - nd_value) > margin:
+	    if amount_saved > nd_value:
+	        high = r
+	        r = (high+low)/2
+	        amount_saved = amount_cal(initial_deposit,r)
+	    else:
+	        low = r
+	        r = (high+low)/2
+	        amount_saved = amount_cal(initial_deposit,r)
+	    steps+=1
+	
+	print(f'Best savings rate: {r} [or very close to this number]')
+	print(f'Steps in bisection search: {steps} [May vary based on how you implemented your bisection search]')
+	return r, steps
