@@ -11,4 +11,4 @@ def all_true(n, Lf):
     return True
 
 # Examples:    
-all_true() # prints 6
+all_true(5, [lambda x: x > 0, lambda x: x < 10]) # prints True

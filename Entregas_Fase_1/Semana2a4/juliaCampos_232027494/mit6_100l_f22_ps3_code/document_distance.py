@@ -196,20 +196,13 @@ def get_tf(file_path):
         in the document) / (total number of words in the document)
     * Think about how we can use get_frequencies from earlier
     """
-    total_words = 0
+    words_list = text_to_list(load_file(file_path))
+    total_words = len(words_list)
+    
+    word_counts = get_frequencies(words_list)
     tf = {}
-
-    with open(file_path,'r',encoding='utf-8') as file:
-        content = file.read().split()
-        word_times = get_frequencies(content)
-        calculate = word_times.items()
-
-        for i in calculate:
-            total_words += i
-        
-        for k,freq in word_times:
-            tf[k] = freq/total_words
-
+    for word, count in word_counts.items():
+        tf[word] = count / total_words
     return tf
 
 
@@ -225,18 +218,16 @@ def get_idf(file_paths):
     with math.log10()
 
     """
-    tot = Counter()
-    idf = {}
-
     total_files = len(file_paths)
-    for i in file_paths:
-        palav = get_tf(i).items()
-        palav_word = palav.keys()
-        tot.update(palav_word)
-
-    for j in palav_word:
-        idf[j] = math.log(total_files/tot[j])
-
+    word_doc_counts = Counter()
+    
+    for path in file_paths:
+        words_in_doc = set(text_to_list(load_file(path)))
+        word_doc_counts.update(words_in_doc)
+        
+    idf = {}
+    for word, count in word_doc_counts.items():
+        idf[word] = math.log10(total_files / count)
     return idf
 
 
@@ -253,7 +244,20 @@ def get_tfidf(tf_file_path, idf_file_paths):
 
         * TF-IDF(i) = TF(i) * IDF(i)
         """
-    pass
+    tf_dict = get_tf(tf_file_path)
+    idf_dict = get_idf(idf_file_paths)
+    
+    tfidf_list = []
+    
+    for word, tf_value in tf_dict.items():
+        
+        idf_value = idf_dict.get(word, 0)
+        tfidf_score = tf_value * idf_value
+        tfidf_list.append((word, tfidf_score))
+        
+    sorted_tfidf = sorted(tfidf_list, key=lambda x: (x[1], x[0]))
+    
+    return sorted_tfidf
 
 
 if __name__ == "__main__":

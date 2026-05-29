@@ -90,7 +90,7 @@ def get_word_progress(secret_word, letters_guessed):
     count = 0
 
     for i in range(count_word):
-      if i in letters_guessed:
+      if i in secret_word:
           word[count] = i
           count += 1
       else:

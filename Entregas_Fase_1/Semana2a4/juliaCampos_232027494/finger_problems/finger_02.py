@@ -1,3 +1,4 @@
+number =1
 if number > 0:
     print('Is positive')
 elif(number < 0):

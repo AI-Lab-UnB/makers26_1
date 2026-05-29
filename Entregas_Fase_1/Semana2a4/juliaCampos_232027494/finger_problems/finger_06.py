@@ -1,5 +1,7 @@
-minimo = 0
-maximo = 1001
+input_str = input("Enter a number")
+N = int(input_str)
+minimo = N+1
+maximo = N-1
 
 count = 0
 answer = (minimo+maximo)//2

@@ -27,7 +27,7 @@ def all_positive(d):
         for i in value:
             soma+=i
         
-        if soma>=0:
+        if soma>0:
             final_list.append(key)
 
     return sorted(final_list)

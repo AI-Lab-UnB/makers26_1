@@ -2,7 +2,7 @@
 
 ### Question 1: Simplify `n*n + log(n) + 2**a` to determine θ in terms of n.
 
-$\Theta(2^n)$ , o exponencial $2^n$  cresce muito mais rápido que o quadrático ou logarítmico
+$\Theta(n^2)$ , se *a* é constante, então o dominante é n²
 
 ### Question 2: Simplify `2**n + n*log(n) + n**2` to determine θ in terms of n.
 

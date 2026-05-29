@@ -17,10 +17,10 @@ def sum_str_lengths(L):
                 if type(j) == str:
                     count += len(j)
                 else:
-                    return ValueError
+                    raise ValueError
         else:
-            return ValueError
-
+            raise ValueError
+    
 
     return count
 
