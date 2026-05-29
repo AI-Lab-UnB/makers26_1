@@ -46,17 +46,28 @@ min = 0
 integer = 1
 count = 1
 answer = None
-while(True):
-    if (max+min)//2 == integer:
-        answer = (max+min)//2
-        break 
-    if (max+min)//2 > integer:
-        max = (max+min)//2
+high = 1001
+low = 0
+integer = 1
+count = 1
+answer = None
+
+while low <= high:
+    mid = (high + low) // 2
+
+    if mid == integer:
+        answer = mid
+        break
+
+    elif mid > integer:
+        high = mid - 1
     else:
-        min = (max+min)//2
-    count +=1
-print ("count: ", count)
-print("answer: ", answer)
+        low = mid + 1
+
+    count += 1
+
+print("count:", count)
+print("answer:", answer)
 """
 
 
@@ -81,10 +92,10 @@ def two_quadratics(a1, b1, c1, x1, a2, b2, c2, x2):
     # Evaluates another quadratic with coefficients a2, b2, c2, at x2.
     # Prints the sum of the two evaluations. Does not return anything.
 
-    print(eval_quadratic(a1, b1, c1, x1) + eval_quadratic(a2, b2, c2, x2))
+    return (eval_quadratic(a1, b1, c1, x1) + eval_quadratic(a2, b2, c2, x2))
 
 # Examples:    
-#two_quadratics(1, 1, 1, 1, 1, 1, 1, 1) # prints 6
+#print(two_quadratics(1, 1, 1, 1, 1, 1, 1, 1)) # prints 6
 print(two_quadratics(1, 1, 1, 1, 1, 1, 1, 1)) # prints 6 then None
 """
 #finger 8
@@ -120,7 +131,7 @@ def dot_product(tA, tB):
     # * first element is the length of one of the tuples
     # * second element is the sum of the pairwise products of tA and tB
     
-    return tuple([len(tA), tA[0]*tB[0] + tA[1]*tB[1] + tA[2]*tB[2]])
+    return (len(tA), sum(a*b for a, b in zip(tA, tB)))
 
 # Examples:
 tA = (1, 2, 3)
@@ -171,8 +182,15 @@ def count_sqrts(nums_list):
 
     count = 0
     for num in nums_list:
-        if num*num in nums_list:
+
+        root = int(num ** 0.5)
+
+        # verifica:
+        # 1. se num é quadrado perfeito
+        # 2. se a raiz está na lista
+        if root * root == num and root in nums_list:
             count += 1
+
     return count
 
 # Examples:    
@@ -275,7 +293,7 @@ def flatten(L):
     for element in L:
         if type(element) is list:
             list_now.extend(flatten(element))
-        elif type(element) is int:
+        else:
             list_now.append(element)
     return list_now
 

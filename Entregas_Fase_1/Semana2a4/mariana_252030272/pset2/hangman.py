@@ -55,10 +55,10 @@ def has_player_won(secret_word, letters_guessed):
     returns: boolean, True if all the letters of secret_word are in letters_guessed,
         False otherwise
     """
-    if secret_word in letters_guessed:
-       return True
-    else:
-       return False
+    for letra in secret_word:
+        if letra not in letters_guessed:
+            return False
+    return True
 
 def get_word_progress(secret_word, letters_guessed):
     """
@@ -158,11 +158,11 @@ def hangman(secret_word, with_help):
            guesses_reduced = 2
         if letter_guessed in secret_word:
           print("Good guess: ", end="")
-        elif letter_guessed not in secret_word:
+        else:
           print("Oops! That letter is not in my word: ", end="")
           guesses -= guesses_reduced
       elif letter_guessed == "!" and with_help == True:
-        for i in range(len(get_available_letters)):
+        for i in range(len(letras_faltantes)):
            if letras_faltantes[i] in secret_word:
               chutes.append(letras_faltantes[i])
       elif(letter_guessed in chutes):
@@ -175,7 +175,7 @@ def hangman(secret_word, with_help):
       palavra = get_word_progress(secret_word, chutes)
       print(palavra)
     if guesses == 0:
-      print("Sorry, you ran out of guesses. The word was else.")
+      print("Sorry, you ran out of guesses. The word was {secret_word}.")
     else:
        print("Congratulations, you won!")
        print(f"Your total score for this game is: {guesses + 4 * len(char_unicos) + 3 * len(secret_word)}")
