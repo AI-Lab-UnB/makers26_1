@@ -84,7 +84,7 @@ class PlaintextMessage(Message):
         if pad is None:
             self.pad = self.generate_pad()
         else:
-            self.pad = pad
+            self.pad = pad[:]
         self.ciphertext = self.apply_pad(self.pad)
     def __repr__(self):
         '''
@@ -136,7 +136,7 @@ class PlaintextMessage(Message):
 
         Returns: nothing
         '''
-        self.pad = new_pad
+        self.pad = new_pad[:]
         self.ciphertext = self.apply_pad(self.pad)
 
 

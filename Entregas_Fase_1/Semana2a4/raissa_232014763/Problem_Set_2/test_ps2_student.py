@@ -161,7 +161,7 @@ Your total score for this game is: 22'''
                 threw_exception = True
             global outputstr
             student_output = outputstr[:]
-            lines = re.split('\-{3,}',outputstr)
+            lines = re.split(r'-{3,}', outputstr)
             outputstr =""
             try:
                 self.assertFalse(threw_exception)
@@ -238,7 +238,7 @@ Sorry, you ran out of guesses. The word was hi'''
             except:
                 threw_exception = True
             global outputstr
-            lines = re.split('\-{3,}',outputstr)
+            lines = re.split(r'-{3,}', outputstr)
             student_output = outputstr[:]
             outputstr =""
             try:
@@ -331,7 +331,7 @@ Your total score for this game is: 55
                 threw_exception = True
             global outputstr
 
-            lines = re.split('\-{3,}',outputstr)
+            lines = re.split(r'-{3,}', outputstr)
             student_output = outputstr[:]
             outputstr =""
             try:

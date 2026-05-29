@@ -158,10 +158,11 @@ def hangman(secret_word, with_help):
                 print("You don't have enough guesses for help!")
             else:
                 for letter in secret_word:
-                    if letter not in letters_guessed:
+                    if letter not in     letters_guessed:
                         letters_guessed.append(letter)
                         guesses -= 3
                         print("Letter revealed:", letter)
+                        print(get_word_progress(secret_word, letters_guessed))
                         break
 
        
@@ -190,7 +191,9 @@ def hangman(secret_word, with_help):
         print("-----------")
 
         if has_player_won(secret_word, letters_guessed):
-            print("Congratulations, you won! The word was:", secret_word)
+            score = guesses * len(secret_word) + len(set(secret_word))
+            print("Congratulations, you won!")
+            print("Your total score for this game is:", score)
             return
 
     print("Sorry, you ran out of guesses. The word was:", secret_word)
