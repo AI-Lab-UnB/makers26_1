@@ -23,3 +23,5 @@ A maior parte das informações está na documentação. Seções principais:
 - **Rotações**: relatórios individuais.
 - **Backlog**: tarefas por membro.
 - **Atas e Checklists**: reuniões e checklists semanais.
+
+--
