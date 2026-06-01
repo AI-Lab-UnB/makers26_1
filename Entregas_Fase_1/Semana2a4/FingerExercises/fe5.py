@@ -1,0 +1,1 @@
+print(my_str[::2])
