@@ -2,8 +2,8 @@
 
 ## Links
 
-- Repositório: https://github.com/Diogo-Olivv/AILAB_Makers---Grupo-2
-- Documentação (GitHub Pages): https://diogo-olivv.github.io/AILAB_Makers---Grupo-2/
+- Repositório: https://github.com/Diogo-Olivv/HealthTech
+- Documentação (GitHub Pages): https://diogo-olivv.github.io/HealthTech/
 
 ## Descrição
 
