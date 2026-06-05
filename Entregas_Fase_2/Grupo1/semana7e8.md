@@ -1,5 +1,7 @@
 # Resumo das Atividades (Semanas 7 e 8 do curso)
 
+Link para o repositório: https://github.com/pedrohpsantos/EdTech
+
 As Semanas 7 e 8 do curso correspondem às Sprints 2 e 3 do projeto EdTech. Ou seja, englobam toda a fase de planejamento de arquitetura e requisitos, seguida pelo início da estruturação técnica (desenvolvimento das fundações do backend e frontend).
 
 ## O que fizemos na Semana 7 (Sprint 2 do Projeto - Planejamento):
