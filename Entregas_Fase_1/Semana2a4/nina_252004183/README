@@ -1,0 +1,69 @@
+# Aprendizados em Python
+
+## Sintaxe e Estrutura da Linguagem
+
+Ao longo das atividades desenvolvidas, foi possível compreender a sintaxe básica da linguagem Python, incluindo o uso de variáveis, tipos de dados primitivos (`int`, `float` e `str`) e operações fundamentais. Diferentemente da linguagem C, Python utiliza indentação obrigatória para definir blocos de código, o que exige maior atenção à organização e legibilidade dos programas.
+
+Também foram utilizadas funções de entrada e saída, como `input()` e `print()`, permitindo a interação com o usuário e a visualização dos resultados de forma simples e intuitiva.
+
+## Estruturas Condicionais e Controle de Fluxo
+
+O uso de estruturas condicionais (`if`, `elif` e `else`) foi fundamental para controlar o fluxo de execução dos programas. Essas estruturas permitiram implementar validações de entrada e tomar decisões com base em diferentes condições lógicas.
+
+Foram utilizados operadores relacionais e lógicos, como `and`, `or` e `not`, possibilitando a construção de condições mais elaboradas e adequadas aos problemas propostos.
+
+## Laços de Repetição
+
+Os laços de repetição (`for` e `while`) foram amplamente utilizados em situações que exigiam a execução repetitiva de instruções. Esses recursos foram aplicados em simulações, cálculos iterativos e processamento de dados, exigindo atenção ao controle das condições de parada e à atualização correta das variáveis envolvidas.
+
+## Modularização com Funções
+
+A criação de funções por meio da palavra-chave `def` permitiu estruturar melhor os programas, dividindo problemas maiores em partes menores e mais organizadas. O uso de parâmetros e valores de retorno (`return`) contribuiu para a reutilização de código, tornando as soluções mais legíveis e fáceis de manter.
+
+Essa abordagem foi especialmente importante no desenvolvimento de programas mais complexos, nos quais diferentes partes da lógica precisavam ser separadas de forma clara e eficiente.
+
+## Manipulação de Strings
+
+A manipulação de strings foi explorada em diversas atividades, incluindo a iteração sobre caracteres, comparação de letras e construção de novas strings a partir de condições específicas. Essas operações foram essenciais para o desenvolvimento de programas interativos, como o jogo da forca.
+
+## Estruturas de Dados
+
+Foram utilizadas estruturas de dados como listas e dicionários. As listas permitiram armazenar e percorrer conjuntos de elementos, enquanto os dicionários foram utilizados para associar chaves a valores e realizar contagens de frequência.
+
+No contexto da análise de textos, os dicionários foram empregados para calcular a frequência de palavras e letras, permitindo a extração de informações relevantes a partir dos dados analisados.
+
+## Aplicação nos Problem Sets
+
+Os conceitos aprendidos foram aplicados nos Problem Sets desenvolvidos ao longo do curso.
+
+### Problem Set 1
+
+Foram realizadas simulações envolvendo cálculo de economia ao longo do tempo, utilizando laços de repetição e atualização de variáveis.
+
+### Problem Set 2
+
+Foi desenvolvido um programa interativo baseado no jogo da forca, que exigiu organização em funções, manipulação de strings e validação das entradas do usuário.
+
+### Problem Set 3
+
+Foram aplicados conceitos de leitura de arquivos, manipulação de dados e análise de frequência, incluindo a implementação das métricas TF, IDF e TF-IDF.
+
+## Dificuldades Encontradas
+
+Durante o desenvolvimento das atividades, uma das principais dificuldades foi a falta de familiaridade com a linguagem Python. Por estar no segundo semestre da graduação e ter tido pouco contato prévio com a linguagem, muitos dos conceitos apresentados exigiram estudo adicional além das aulas e dos materiais disponibilizados no curso.
+
+Em diversos momentos foi necessário dedicar bastante tempo para compreender não apenas a sintaxe da linguagem, mas também a lógica por trás das soluções propostas. Conceitos como funções, manipulação de strings, dicionários e processamento de arquivos demandaram prática constante até que pudessem ser utilizados com mais segurança.
+
+Os Problem Sets representaram desafios importantes nesse processo. Muitas vezes foi necessário revisar conteúdos, pesquisar na documentação da linguagem, testar diferentes soluções e corrigir erros nos programas até alcançar o resultado esperado. Esse processo, embora trabalhoso, foi fundamental para consolidar os conhecimentos adquiridos.
+
+Além das dificuldades técnicas, também foi necessário desenvolver maior autonomia na resolução de problemas, aprendendo a interpretar mensagens de erro e a dividir problemas maiores em etapas menores e mais fáceis de resolver.
+
+Apesar dos desafios encontrados ao longo do curso, o esforço dedicado ao estudo e à prática permitiu uma evolução significativa na compreensão da linguagem e na capacidade de desenvolver soluções computacionais de forma mais organizada e eficiente.
+
+## Considerações Finais
+
+De forma geral, o desenvolvimento das atividades contribuiu para o aprimoramento do raciocínio lógico e da capacidade de estruturar soluções de maneira organizada. A linguagem Python se mostrou mais simples e legível em comparação com C, permitindo maior foco na lógica dos algoritmos e na resolução dos problemas propostos.
+
+As dificuldades encontradas ao longo do curso também contribuíram para o aprendizado, tornando mais evidente a importância da prática, da persistência e da organização do código. Como resultado, foi possível consolidar conceitos fundamentais de programação e desenvolver uma base sólida para estudos e projetos futuros na área de computação.
+
+Além dos conhecimentos técnicos adquiridos, a experiência proporcionou maior confiança para aprender novas tecnologias e enfrentar problemas mais complexos. O curso representou um importante passo na formação acadêmica, contribuindo não apenas para o aprendizado de uma nova linguagem de programação, mas também para o desenvolvimento de habilidades que serão úteis ao longo da graduação e da futura atuação profissional.
