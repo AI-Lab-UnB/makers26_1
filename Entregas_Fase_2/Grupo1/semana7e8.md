@@ -2,20 +2,21 @@
 
 Link para o repositório: https://github.com/pedrohpsantos/EdTech
 
-As Semanas 7 e 8 do curso correspondem às Sprints 2 e 3 do projeto EdTech. Ou seja, englobam toda a fase de planejamento de arquitetura e requisitos, seguida pelo início da estruturação técnica (desenvolvimento das fundações do backend e frontend).
+## Semana 7 – Sprint 1: Organização
 
-## O que fizemos na Semana 7 (Sprint 2 do Projeto - Planejamento):
+A semana foi dedicada à estruturação operacional do time e do ambiente de trabalho colaborativo:
 
-- **Lean Inception:** Definição da Visão do Produto, Personas (Pesquisadora, Orientador, Auditora) e Jornadas de Usuários.
-- **Requisitos:** Mapeamento de 22 funcionalidades, Requisitos Funcionais (RFs) e Não Funcionais (RNFs).
-- **Arquitetura:** Modelagem C4 (Contexto e Container), Diagramas de Banco de Dados, Segurança e Fluxo JWT, e 9 ADRs (Decision Records) justificando as tecnologias como Spring Boot, Vite, PostgreSQL, e Cloud Run.
-- **Gestão:** Organização da equipe (sistema de rotações), definição do Git Flow e critérios de "Done" (DoD).
+- Decisão sobre os papéis de cada membro da equipe com base no modelo de rotações entre as frentes de Docs, QA, Frontend, Backend e DevOps.
+- Criação do repositório no GitHub com estrutura de branches seguindo Git Flow.
+- Configuração do GitHub Pages para publicação contínua da documentação.
+- Alinhamento inicial sobre critérios de aceite (DoR/DoD).
 
-## O que foi construído na Semana 8 (Sprint 3 do Projeto):
+## Semana 8 – Sprint 2: Planejamento
 
-- **Fundação Backend:** Setup do ambiente Spring Boot com as dependências essenciais (JPA, Security, PostgreSQL).
-- **Funcionalidades Iniciais:** Criação da primeira entidade (User) e do endpoint de registro (`/api/auth/register`), com validações reais (ex: domínio obrigatório `@unb.br`) e criptografia de senha (BCrypt).
-- **Fundação Frontend:** Inicialização do frontend com React, Vite e Bootstrap.
-- **Telas Iniciais:** Desenvolvimento das páginas de Login, Cadastro e Dashboard, além da configuração de rotas (`react-router-dom`).
-- **Testes e Qualidade:** Configuração da suíte de testes (JUnit, Mockito) integrando o JaCoCo, onde alcançamos 92% de cobertura inicial.
-- **Auditoria Base:** Criação e estruturação inicial do Módulo de Auditoria (AuditLog), crucial para os requisitos do projeto.
+A semana concentrou o esforço de descoberta e planejamento do produto:
+
+- **Lean Inception:** definimos a Visão do Produto, criamos as Personas principais e mapeamos suas Jornadas de Usuário, estabelecendo o escopo do MVP.
+- **Requisitos:** levantamos 22 funcionalidades, separando Requisitos Funcionais de Não Funcionais, com priorização inicial.
+- **Arquitetura:** produzimos diagramas C4 (Contexto e Container), modelo de banco de dados relacional, diagrama de fluxo de autenticação com JWT e diagrama de segurança da aplicação.
+- **ADRs:** formalizamos 9 registros de decisão de arquitetura, cobrindo escolhas como Spring Boot, Vite+React, PostgreSQL e Cloud Run.
+- **Gestão:** consolidamos o DoD por nível de entrega e padronizamos a nomenclatura de branches e commits.
