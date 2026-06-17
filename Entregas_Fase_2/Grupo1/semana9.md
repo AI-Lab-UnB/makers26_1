@@ -15,4 +15,3 @@ Configuramos JUnit 5 com Mockito e integramos o JaCoCo ao build do Maven. Os tes
 
 **Auditoria:**
 A entidade `AuditLog` e o repositório correspondente foram criados e estruturados. A integração com os demais módulos (registro de eventos de autenticação, por exemplo) está planejada para as próximas sprints.
-
