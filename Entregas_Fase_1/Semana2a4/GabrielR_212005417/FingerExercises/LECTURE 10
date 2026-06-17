@@ -1,0 +1,5 @@
+def all_true(n, Lf):
+    for f in Lf:
+        if not f(n):
+            return False
+    return True

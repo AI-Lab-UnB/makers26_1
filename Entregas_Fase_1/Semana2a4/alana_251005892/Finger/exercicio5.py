@@ -1,0 +1,5 @@
+my_str = str(input("digite uma string: "))
+caracteres = list(my_str)
+caracteres.reverse()
+stri= ''.join(caracteres)
+print(stri)

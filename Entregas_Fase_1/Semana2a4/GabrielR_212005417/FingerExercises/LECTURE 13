@@ -1,0 +1,15 @@
+def sum_str_lengths(L):
+    total = 0
+    for elem in L:
+        if isinstance(elem, str):
+            total += len(elem)
+        elif isinstance(elem, list):
+            for sub in elem:
+                if not isinstance(sub, str):
+                    raise ValueError("Sublist contains non-string element")
+                total += len(sub)
+        else:
+            raise ValueError("List contains non-string and non-list element")
+    return total
+ 
+print(sum_str_lengths(["abcd", ["e", "fg"]])) 

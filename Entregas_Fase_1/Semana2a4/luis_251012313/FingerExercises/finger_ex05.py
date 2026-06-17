@@ -1,0 +1,4 @@
+my_str = input("Type your text: ");
+
+for i in range(0, len(my_str), 2):
+	print(my_str[i], end = "");

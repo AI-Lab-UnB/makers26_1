@@ -1,0 +1,150 @@
+=============================================================
+RESULTS FOR TEST CASE: test_play_game_short
+WORD USED IN TEST: hi
+GUESSED LETTERS IN ORDER OF GUESS: ['h', 'e', 'i']
+************************
+YOUR OUTPUT:
+************************
+Loading word list from file...
+  55900 words loaded.
+Welcome to Hangman!
+I am thinking of a word that is 2 letters long.
+-----------
+You have 10 guesses left.
+Available letters: abcdefghijklmnopqrstuvwxyz
+Good guess: h*
+-----------
+You have 10 guesses left.
+Available letters: abcdefgijklmnopqrstuvwxyz
+Oops! That letter is not in my word and it's a vowel (-2 guesses): h*
+-----------
+You have 8 guesses left.
+Available letters: abcdfgijklmnopqrstuvwxyz
+Good guess: hi
+-----------
+Congratulations, you won! The word was: hi
+
+************************
+POSSIBLE CORRECT OUTPUT:
+************************
+Welcome to Hangman!
+I am thinking of a word that is 2 letters long.
+------
+You have 10 guesses left.
+Available letters: abcdefghijklmnopqrstuvwxyz
+Please guess a letter: h
+Good guess: h*
+------
+You have 10 guesses left.
+Available letters: abcdefgijklmnopqrstuvwxyz
+Please guess a letter: e
+Oops! That letter is not in my word: h*
+------
+You have 8 guesses left.
+Available letters: abcdfgijklmnopqrstuvwxyz
+Please guess a letter: i
+Good guess: hi
+------
+Congratulations, you won!
+Your total score for this game is: 22
+=============================================================
+
+
+=============================================================
+RESULTS FOR TEST CASE: test_play_game_wildcard
+WORD USED IN TEST: wildcard
+GUESSED LETTERS IN ORDER OF GUESS: ['k', 'w', 'i', 'l', 'd', 'c', '!', '!']
+************************
+YOUR OUTPUT:
+************************
+Welcome to Hangman!
+I am thinking of a word that is 8 letters long.
+-----------
+You have 10 guesses left.
+Available letters: abcdefghijklmnopqrstuvwxyz
+Oops! That letter is not in my word: ********
+-----------
+You have 9 guesses left.
+Available letters: abcdefghijlmnopqrstuvwxyz
+Good guess: w*******
+-----------
+You have 9 guesses left.
+Available letters: abcdefghijlmnopqrstuvxyz
+Good guess: wi******
+-----------
+You have 9 guesses left.
+Available letters: abcdefghjlmnopqrstuvxyz
+Good guess: wil*****
+-----------
+You have 9 guesses left.
+Available letters: abcdefghjmnopqrstuvxyz
+Good guess: wild***d
+-----------
+You have 9 guesses left.
+Available letters: abcefghjmnopqrstuvxyz
+Good guess: wildc**d
+-----------
+You have 9 guesses left.
+Available letters: abefghjmnopqrstuvxyz
+Letter revealed: a
+-----------
+You have 6 guesses left.
+Available letters: befghjmnopqrstuvxyz
+Letter revealed: r
+-----------
+Congratulations, you won! The word was: wildcard
+
+************************
+POSSIBLE CORRECT OUTPUT:
+************************
+Welcome to hangman!
+I am thinking of a word that is 8 letters long
+------
+You have 10 guesses left
+Available letters: abcdefghijklmnopqrstuvwxyz
+Please guess a letter: k
+Oops! That letter is not in my word: ********
+------
+You have 9 guesses left
+Available letters: abcdefghijlmnopqrstuvwxyz
+Please guess a letter: w
+Good guess: w*******
+------
+You have 9 guesses left
+Available letters: abcdefghijlmnopqrstuvxyz
+Please guess a letter: i
+Good guess: wi******
+------
+You have 9 guesses left
+Available letters: abcdefghjlmnopqrstuvxyz
+Please guess a letter: l
+Good guess: wil*****
+------
+You have 9 guesses left
+Available letters: abcdefghjmnopqrstuvxyz
+Please guess a letter: d
+Good guess: wild***d
+------
+You have 9 guesses left
+Available letters: abcefghjmnopqrstuvxyz
+Please guess a letter: c
+Good guess: wildc**d
+------
+You have 9 guesses left
+Available letters: abefghjmnopqrstuvxyz
+Please guess a letter: !
+Letter revealed: a
+wildca+d
+------
+You have 6 guesses left
+Available letters: befghjmnopqrstuvxyz
+Please guess a letter: !
+Letter revealed: r
+Good guess: wildcard
+------
+Congratulations, you won!
+Your total score for this game is: 55
+
+=============================================================
+
+

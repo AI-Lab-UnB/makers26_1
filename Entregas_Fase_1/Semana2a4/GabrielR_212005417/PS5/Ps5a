@@ -1,0 +1,143 @@
+
+'''
+# IMPORTANTE: para rodar este arquivo instale o Pillow com o comando:
+# python -m pip install pillow --break-system-packages
+
+LINHA DE PENSAMENTO:
+- PARTE 1: filtros de daltonismo usando multiplicacao de matrizes nos pixels
+- PARTE 2: esteganografia - extrair bits menos significativos para revelar imagens ocultas
+- PARTE 3: aplicar marca dagua nas imagens geradas
+'''
+
+from PIL import Image
+
+# FUNCOES FORNECIDAS - NAO MODIFICAR
+def matrix_multiply(matrix, vector):
+    # multiplica uma matriz por um vetor
+    result = []
+    for row in matrix:
+        total = 0
+        for i in range(len(row)):
+            total += row[i] * vector[i]
+        result.append(total)
+    return result
+
+def make_matrix(color):
+    # retorna a matriz de transformacao para o tipo de daltonismo
+    matrices = {
+        'red': [[0.567, 0.433, 0], [0.558, 0.442, 0], [0, 0.242, 0.758]],
+        'green': [[0.625, 0.375, 0], [0.7, 0.3, 0], [0, 0.142, 0.858]],
+        'blue': [[0.95, 0.05, 0], [0, 0.433, 0.567], [0, 0.475, 0.525]],
+        'none': [[1, 0, 0], [0, 1, 0], [0, 0, 1]]
+    }
+    return matrices[color]
+
+def draw_kerb(filename, kerberos):
+    # adiciona marca dagua com o kerberos na imagem
+    from PIL import ImageDraw, ImageFont
+    img = Image.open(filename)
+    draw = ImageDraw.Draw(img)
+    draw.text((10, 10), kerberos, fill=(255, 255, 255))
+    new_filename = filename.split('.')[0] + '_kerb.' + filename.split('.')[1]
+    img.save(new_filename)
+    print('Imagem salva como:', new_filename)
+
+# PARTE 1 - CONVERTER IMAGEM PARA LISTA DE PIXELS
+def img_to_pix(filename):
+    imagem = Image.open(filename)
+    return list(imagem.getdata())
+
+# PARTE 1 - CONVERTER LISTA DE PIXELS PARA IMAGEM
+def pix_to_img(pixels_list, size, mode):
+    # mode: 'RGB' para colorido, 'L' para preto e branco
+    imagem = Image.new(mode, size)
+    imagem.putdata(pixels_list)
+    return imagem
+
+# PARTE 1 - FILTRO DE DALTONISMO
+def filter(pixels_list, color):
+    matriz = make_matrix(color)
+    pixels_transformados = []
+
+    for pixel in pixels_list:
+        # multiplica o pixel pela matriz de transformacao
+        resultado = matrix_multiply(matriz, pixel)
+        # converte os floats para ints e garante que ficam entre 0 e 255
+        novo_pixel = tuple(min(255, max(0, int(v))) for v in resultado)
+        pixels_transformados.append(novo_pixel)
+
+    return pixels_transformados
+
+# PARTE 2 - EXTRAIR BITS MENOS SIGNIFICATIVOS
+def extract_end_bits(num_end_bits, pixel):
+    # pixel % 2^num_end_bits retorna os ultimos num_end_bits bits
+    return pixel % (2 ** num_end_bits)
+
+# PARTE 2 - REVELAR IMAGEM OCULTA EM BW
+def reveal_bw_image(filename):
+    imagem = Image.open(filename)
+    pixels = list(imagem.getdata())
+    tamanho = imagem.size
+
+    pixels_revelados = []
+    for pixel in pixels:
+        # extrai o LSB de cada pixel
+        lsb = extract_end_bits(1, pixel)
+        # reescala de 0-1 para 0-255
+        pixel_reescalado = lsb * 255
+        pixels_revelados.append(pixel_reescalado)
+
+    # cria imagem em preto e branco
+    return pix_to_img(pixels_revelados, tamanho, 'L')
+
+# PARTE 2 - REVELAR IMAGEM OCULTA EM COR
+def reveal_color_image(filename):
+    imagem = Image.open(filename)
+    pixels = list(imagem.getdata())
+    tamanho = imagem.size
+
+    pixels_revelados = []
+    for pixel in pixels:
+        # extrai os 3 LSBs de cada canal (R, G, B)
+        r = extract_end_bits(3, pixel[0])
+        g = extract_end_bits(3, pixel[1])
+        b = extract_end_bits(3, pixel[2])
+        # reescala de 0-7 para 0-255
+        r_reescalado = int(r * 255 / 7)
+        g_reescalado = int(g * 255 / 7)
+        b_reescalado = int(b * 255 / 7)
+        pixels_revelados.append((r_reescalado, g_reescalado, b_reescalado))
+
+    # cria imagem colorida
+    return pix_to_img(pixels_revelados, tamanho, 'RGB')
+
+# PARTE 2 - REVELAR IMAGEM (decide BW ou RGB automaticamente)
+def reveal_image(filename):
+    imagem = Image.open(filename)
+    if imagem.mode == 'L':
+        return reveal_bw_image(filename)
+    else:
+        return reveal_color_image(filename)
+
+if __name__ == '__main__':
+    # PARTE 1 - aplicar filtro de daltonismo
+    pixels_originais = img_to_pix('image_15.png')
+    imagem_original = Image.open('image_15.png')
+    tamanho = imagem_original.size
+
+    pixels_filtrados = filter(pixels_originais, 'red')
+    imagem_filtrada = pix_to_img(pixels_filtrados, tamanho, 'RGB')
+    imagem_filtrada.save('image_15_filtered.png')
+    print('Imagem filtrada salva!')
+
+    # PARTE 2 - revelar imagem oculta BW
+    imagem_bw = reveal_bw_image('hidden1.bmp')
+    imagem_bw.save('hidden1_revealed.bmp')
+    print('Imagem BW revelada salva!')
+
+    # PARTE 2 - revelar imagem oculta colorida
+    imagem_color = reveal_color_image('hidden2.bmp')
+    imagem_color.save('hidden2_revealed.bmp')
+    print('Imagem colorida revelada salva!')
+
+    # PARTE 3 - adicionar marca dagua (comentar antes de submeter!)

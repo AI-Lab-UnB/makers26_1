@@ -1,0 +1,7 @@
+def keys_with_value(aDict, target):
+    return sorted([k for k, v in aDict.items() if v == target])
+ 
+aDict = {1: 2, 2: 4, 5: 2}
+target = 2
+print(keys_with_value(aDict, target)) 
+ 

@@ -1,0 +1,5 @@
+'''
+Q1: running_product(a) — loop de range(5, a+5) → θ(n)
+Q2: tricky_f(L, L2) — dois loops, cada com "in" que é O(n) → θ(n²)
+Q3: sum_f(n) — divide n por 10 a cada iteração (log base 10) → θ(log n)
+'''

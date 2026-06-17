@@ -1,0 +1,36 @@
+ if tree is None :
+        return True
+    
+    else :
+
+        value = tree.get_value()
+
+        if tree.get_right_child() is not None:
+            right_value = tree.get_right_child().get_value()
+
+        if tree.get_left_child() is not None:
+            left_value = tree.get_left_child().get_value()
+
+        if compare_func == "Min Heap" :
+
+            if (value < right_value and value < left_value) or (value < right_value and left_value is None) or (right_value is None and value < left_value):
+
+                tree = is_heap(tree.get_left_child(), compare_func)
+                tree = is_heap(tree.get_right_child(), compare_func)
+
+            else : 
+
+                return False
+            
+        elif compare_func == "Max Heap" :
+
+            if value > right_value and value > left_value:
+
+                tree = is_heap(tree.get_left_child(), compare_func)
+                tree = is_heap(tree.get_right_child(), compare_func)
+
+                print(tree)
+
+            else : 
+
+                return False
