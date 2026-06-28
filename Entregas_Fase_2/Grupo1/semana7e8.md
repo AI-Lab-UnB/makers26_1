@@ -1,22 +1,22 @@
-# Resumo das Atividades (Semanas 7 e 8 do curso)
+# Resumo das Atividades
 
-Link para o repositório: https://github.com/pedrohpsantos/EdTech
+## Semana 7 – Sprint 1: Organização e Setup Inicial
+Esta semana foi dedicada à estruturação operacional do time e à preparação do ambiente de trabalho colaborativo, pavimentando as bases para a execução do projeto.
 
-## Semana 7 – Sprint 1: Organização
+**Gestão e Papéis da Equipe:**
+Definimos formalmente as responsabilidades de cada membro da equipe utilizando um modelo de rotações para garantir cobertura completa entre as frentes de Documentação, QA, Frontend, Backend e DevOps. Também alinhamos os critérios de aceite e parâmetros de qualidade técnica iniciais (Definition of Ready / Definition of Done).
 
-A semana foi dedicada à estruturação operacional do time e do ambiente de trabalho colaborativo:
+**Infraestrutura e Versionamento (DevOps):**
+Criamos o repositório oficial da aplicação no GitHub e estabelecemos a topologia de versionamento seguindo rigorosamente o padrão Git Flow (ramificações `main`, `develop`, `feature/` e `fix/`). Em paralelo, configuramos a esteira inicial do GitHub Pages para garantir a publicação contínua e automatizada da nossa documentação baseada em Docs-as-Code.
 
-- Decisão sobre os papéis de cada membro da equipe com base no modelo de rotações entre as frentes de Docs, QA, Frontend, Backend e DevOps.
-- Criação do repositório no GitHub com estrutura de branches seguindo Git Flow.
-- Configuração do GitHub Pages para publicação contínua da documentação.
-- Alinhamento inicial sobre critérios de aceite (DoR/DoD).
+## Semana 8 – Sprint 2: Descoberta de Produto e Arquitetura
+A semana concentrou esforços primários no planejamento estratégico do produto e na modelagem estrutural da aplicação, definindo com exatidão o que seria construído.
 
-## Semana 8 – Sprint 2: Planejamento
+**Descoberta e Planejamento (Produto):**
+Executamos as dinâmicas de Lean Inception, onde formalizamos a Visão do Produto e mapeamos as principais Personas do sistema (Pesquisadora, Orientador, Auditora) junto de suas respectivas Jornadas de Usuário, resultando em um escopo claro e focado para o MVP (Minimum Viable Product).
 
-A semana concentrou o esforço de descoberta e planejamento do produto:
+**Requisitos e Gestão:**
+Realizamos o levantamento e a indexação de 22 funcionalidades de negócio, separando com precisão os Requisitos Funcionais dos Não Funcionais. Ao lado disso, consolidamos o escopo de conclusão (DoD) por nível de entrega e padronizamos estritamente a nomenclatura sistêmica de branches e commits.
 
-- **Lean Inception:** definimos a Visão do Produto, criamos as Personas principais e mapeamos suas Jornadas de Usuário, estabelecendo o escopo do MVP.
-- **Requisitos:** levantamos 22 funcionalidades, separando Requisitos Funcionais de Não Funcionais, com priorização inicial.
-- **Arquitetura:** produzimos diagramas C4 (Contexto e Container), modelo de banco de dados relacional, diagrama de fluxo de autenticação com JWT e diagrama de segurança da aplicação.
-- **ADRs:** formalizamos 9 registros de decisão de arquitetura, cobrindo escolhas como Spring Boot, Vite+React, PostgreSQL e Cloud Run.
-- **Gestão:** consolidamos o DoD por nível de entrega e padronizamos a nomenclatura de branches e commits.
+**Arquitetura de Software:**
+Produzimos os artefatos técnicos essenciais para balizar o desenvolvimento: diagramas C4 Model (Contexto e Container), modelo relacional do banco de dados, fluxos de autenticação (JWT) e diagramas de mitigação e segurança. Por fim, formalizamos 9 registros de decisão de arquitetura (ADRs), embasando tecnicamente escolhas cruciais como Spring Boot, Vite com React, PostgreSQL e Cloud Run.
