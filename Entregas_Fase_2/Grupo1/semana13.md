@@ -1,0 +1,13 @@
+# Resumo das Atividades
+
+## Semana 13 – Sprint 7: Deploy de Produção (MVP), Nuvem, Secret Manager e Resiliência (Segurança/Backup)
+Esta semana coroou o encerramento do MVP, marcando o rito de passagem da aplicação do ambiente local para uma arquitetura "Enterprise Ready" baseada integralmente na nuvem do Google Cloud Platform, orquestrando um robustecimento maciço nas defesas cibernéticas da API e na integridade de dados.
+
+**DevOps e Infraestrutura em Nuvem (Deploy MVP & Secret Manager):**
+O sistema transcendeu o ambiente de desenvolvimento. O frontend SPA foi publicado oficialmente através do **Firebase Hosting**, assegurando extrema velocidade de entrega distribuída por CDN e provisão nativa de criptografia SSL/HTTPS. O backend foi orquestrado no **Cloud Run** na sua versão canônica, recebendo *tunings* cruciais de processamento (CPU Boost) e limitação controlada de conexões simultâneas pelo pool do HikariCP para sustentar cargas elásticas no auto-scaling. Selando a segurança IaC do projeto, abolimos radicalmente variáveis abertas na plataforma através da integração restrita com o **GCP Secret Manager**, garantindo "Zero-Leak" de chaves críticas e JWTs.
+
+**Backend e Resiliência (Defesa contra Força Bruta e Backup Automático):**
+Implementamos fortificações agressivas nas rotas críticas de entrada. Endpoints suscetíveis de autenticação (como login e redefinição) passaram a ser escrutinados pelo mecanismo corporativo do **Bucket4j** (padrão Token Bucket), instituindo políticas duras de **Rate Limiting** (rejeitando ataques de força bruta ou repetições volumétricas com HTTP 429 Too Many Requests). Em paralelo à defesa, garantimos a sobrevida de longo prazo dos dados: desenhamos, arquitetamos em ADR e provisionamos uma engrenagem IaC passiva via **Cloud Scheduler**, forçando *dumps* assíncronos e diários do PostgreSQL (Cloud SQL) rumo a buckets restritos do GCS (com políticas implacáveis de descarte rotativo mensal de *lifecycle*), munindo Orientadores com ferramentas Python de checagem constante.
+
+**Qualidade de Software, Testes Front-End e Excelência Documental:**
+As métricas de saúde pararam de ser sugestões e tornaram-se leis. Subimos oficialmente o limiar orgânico mínimo do JaCoCo para **80% em toda a base da API**, inserindo barreiras de quebra compulsória de CI/CD para qualquer regressão submetida no futuro. Paralelamente, engatamos o ecossistema E2E e testes de Componentes (Playwright/Vite) na barreira contínua do front-end. Fechando o ciclo da semana, extirpamos os resquícios de imaturidade das bases técnicas (READMEs e guias de segurança), trocando informalidades e "personas imaginárias" por vocabulário corporativo de alta clareza, limpando o Checkstyle por completo para encerrar o ciclo isento de *warnings*.
